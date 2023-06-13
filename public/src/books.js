@@ -1,6 +1,6 @@
 function findAuthorById(authors, id) {
   //Set the author Id to the given author id 
-  let authorId = authors.find((author) => author.id === id);
+  let authorId = authors.find((...author) => author.id === id);
   console.log(authorId);
   return authorId;   
 }
