@@ -39,8 +39,10 @@ function totalNumberofBorrows(accountId, books){
 
 function getBooksPossessedByAccount(account, books, authors) {
   let books_taken = [];
-  books.forEach(book=>{
-    if (book.borrows.find(item=>item.id === account.id && !item.returned)) {
+  books.forEach((book, index)=>{
+    const borrow = book.borrows.find(item=>item.id === account.id && !item.returned);
+    if(borrow){
+    //if (book.borrows.find(item=>item.id === account.id && !item.returned)) {
       books_taken.push(book);
     }
   })
